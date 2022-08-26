@@ -1,14 +1,13 @@
 import React,{useState} from 'react';
 import styled, {ThemeProvider} from 'styled-components/native';
 import {theme} from './theme';
-import { StatusBar, Alert } from 'react-native';
+import { StatusBar } from 'react-native';
 import Input from "./components/Input";
 import Task from './components/Task';
 import {Dimensions} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppLoading from 'expo-app-loading';
 import { Button } from 'react-native';
-import LineButton from './components/LineButton';
 
 
 const Container = styled.SafeAreaView`
@@ -139,39 +138,6 @@ export default function App() {
 
   }
 
-
-  //완료항목 전체 삭제
-  const _delAllTask =()=>{
-
-    const deleteCompletedItems = ()=>{
-      const currentTasks = {...tasks};
-      const filteredTasks =
-      Object.fromEntries
-      (Object.entries(currentTasks)
-            .filter(task=>task[1].completed==false));
-        storeData('task', filteredTasks);
-    }
-
-
-  
-    Alert.alert(
-      "삭제" ,            //(모바일)경고창 제목
-      "완료항목 전체를 삭제하시겠습니까?",      //경고창 메세지
-      [
-        {
-          text: "예",
-          onPress: () => deleteCompletedItems(),
-        },
-        { text: "아니오", 
-          onPress: () => {}  
-        }
-      ]
-    );
-  }
-
-
-
-
   //입력필드에 포커스가 떠났을때
   const _onBlur = () =>{
     setNewTask('');
@@ -214,10 +180,12 @@ export default function App() {
                             />)
           }
         </List>
-        <LineButton
-          text='완료항목 전체삭제'
-          onPressOut={_delAllTask}/>
+        <Button
+          onPressOut={removeValue}
+          title="완료항목 전체삭제"
+          color='#007AFF'
+        />
       </Container>
     </ThemeProvider>
   );
-        }
+}
