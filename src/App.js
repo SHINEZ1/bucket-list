@@ -184,7 +184,7 @@ export default function App() {
         </List>
         <Button
           onPressOut={removeValue}
-          title="완료항목 전체삭제"
+          title="완료항목 전체삭제dddddddddddddddddd"
           color='#007AFF'
         />
       </Container>
