@@ -1,9 +1,9 @@
 export const theme = {
-    background: '#101010',
-    itemBackground: '#313131',
-    main: '#778bdd',
-    text: '#cfcfcf',
-    done: '#616161',
-    btncolor: '#fbc531',
+    background: '#FDF7FF',
+    itemBackground: '#FAEAFF',
+    main: '#007559',
+    text: '#120033',
+    done: '#AFA8BA'
 };
 
+export default theme;
