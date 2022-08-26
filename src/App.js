@@ -86,7 +86,6 @@ export default function App() {
   try{
     await AsyncStorage.clear()
   }catch(e){
-    //clear error
   }
   console.log('전체 삭제 Done')
 }
@@ -126,7 +125,6 @@ export default function App() {
   const _toggleTask = id => {
     const currentTasks = {...tasks};  //객체 복사
     currentTasks[id]['completed'] = !currentTasks[id]['completed'];
-    // setTasks(currentTasks); //tasks = currentTasks;
     storeData('tasks',currentTasks);    //로컬저장소에 저장
 
   }
@@ -184,7 +182,7 @@ export default function App() {
         </List>
         <Button
           onPressOut={removeValue}
-          title="완료항목 전체삭제dddddddddddddddddd"
+          title="완료항목 전체삭제"
           color='#007AFF'
         />
       </Container>

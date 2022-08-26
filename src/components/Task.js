@@ -29,7 +29,7 @@ const Task =({task,deleteTask,toggleTask,updateTask})=>{
     //항목 입력 완료시
     const _onSubmitEditing = ()=>{
         if(isEditing){
-          const editedTask = {...task , text};  // text:수정된 텍스트
+          const editedTask = {...task , text};  
           updateTask(editedTask);
           setIsEditing(false);
         }
@@ -55,8 +55,8 @@ const Task =({task,deleteTask,toggleTask,updateTask})=>{
             <Input
                 value={text}
                 placeholder={'항목을 작성바랍니다'}
-                onChangeText={text=>setText(text)}         //입력필드가 수정될때마다
-                onSubmitEditing={_onSubmitEditing}         //입력완료시  
+                onChangeText={text=>setText(text)}         
+                onSubmitEditing={_onSubmitEditing}         
                 onBlur={_onBlur}       
                 
             />

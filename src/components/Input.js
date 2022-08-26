@@ -30,9 +30,9 @@ const Input = ({value, placeholder,onChangeText,onSubmitEditing,onBlur})=>{
     value={value}
     placeholder={placeholder} 
     maxLength ={50}
-    autoCapitalize={'none'}//첫글자 대문자 처리 취소
+    autoCapitalize={'none'}
     returnKeyType={'done'} 
-    keyboardAppearance={'dark'} //only ios 
+    keyboardAppearance={'dark'} 
     onChangeText={onChangeText}
     onSubmitEditing={onSubmitEditing} 
     onBlur={onBlur}

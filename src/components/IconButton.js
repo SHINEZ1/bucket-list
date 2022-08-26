@@ -34,7 +34,6 @@ const IconButton = ({type,onPressOut,id,completed})=>{
 };
 
 
-//핸들러(onPressOut)가 넘어오지 않더라도 오류발생하지 않도록 디폴트 처리함.
 IconButton.defaultProps = {
     onPressOut:()=>{}
 };
